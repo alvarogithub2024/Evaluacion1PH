@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Selecciona una figura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Figura Geométrica</ion-label>
+    <ion-select [(ngModel)]="selectedShape">
+      <ion-select-option value="circulo">Círculo</ion-select-option>
+      <ion-select-option value="triangulo">Triángulo</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ng-container *ngIf="selectedShape === 'circulo'">
+    <app-circulo></app-circulo>
+  </ng-container>
+  <ng-container *ngIf="selectedShape === 'triangulo'">
+    <app-triangulo></app-triangulo>
+  </ng-container>
+</ion-content>
+
+
